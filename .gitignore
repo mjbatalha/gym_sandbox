@@ -3,3 +3,6 @@
 
 # virtualenv
 venv/
+
+# temporary folder
+tmp/

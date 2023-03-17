@@ -1,0 +1,9 @@
+{
+  "reinforce":{
+    "lr": 1e-4,
+    "gamma": 0.99,
+    "optimizer": "adamw",
+    "distribution": "bernoulli",
+    "reward": "identity"
+  }
+}
