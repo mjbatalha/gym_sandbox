@@ -2,6 +2,8 @@ click==8.1.3
 gymnasium==0.27.1
 moviepy==1.0.3
 numpy==1.24.2
+pandas==1.5.3
 pygame==2.3.0
+seaborn==0.12.2
 torch==2.0.0
 tqdm==4.65.0

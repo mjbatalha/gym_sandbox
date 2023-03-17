@@ -40,7 +40,17 @@ def main(task):
         success = p.pipeline()
         print(f"Training Pipeline Succeeded: {success}")
 
-    # elif task == "plot":
+    elif task == "plot":
+
+        from .plot_pipeline import PlotPipeline
+
+        # load relevant parameters
+        plot_params = json.load(Path(os.path.join(params_path, "plot_params.json")).open('r'))
+
+        # run pipeline
+        p = PlotPipeline(plot_params)
+        success = p.pipeline()
+        print(f"Plot Pipeline Succeeded: {success}")
 
 
 if __name__ == "__main__":

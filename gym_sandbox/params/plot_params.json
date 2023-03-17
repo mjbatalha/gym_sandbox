@@ -1,0 +1,44 @@
+{
+  "plot_run_name": "test",
+  "n_runs": [1, 2, 3, 4, 5, 6, 7, 8, 9, 10],
+  "envs": ["CartPole-v1"],
+  "models": ["seqlinear"],
+  "algorithms": ["reinforce"],
+
+  "lineplot_001":{
+    "n_step": 10,
+    "x": "episode",
+    "y": "reward",
+    "hue": "reward_function",
+    "style": "env",
+    "rolling_mean": false,
+    "rolling_window": 100,
+    "ep_min": 0,
+    "ep_max": "max"
+  },
+
+  "lineplot_002":{
+    "n_step": 10,
+    "x": "episode",
+    "y": "reward",
+    "hue": "reward_function",
+    "style": "env",
+    "rolling_mean": true,
+    "rolling_window": 100,
+    "ep_min": 0,
+    "ep_max": "max"
+  },
+
+  "lineplot_003":{
+    "n_step": 10,
+    "x": "episode",
+    "y": "reward",
+    "hue": "reward_function",
+    "style": "env",
+    "rolling_mean": true,
+    "rolling_window": 100,
+    "ep_min": 4000,
+    "ep_max": 5000
+  }
+
+}
