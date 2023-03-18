@@ -1,8 +1,8 @@
 {
   "seqlinear":{
     "in_dims": 4,
-    "out_dims": 1,
+    "out_dims": 2,
     "hidden_dims": [16, 32],
-    "activations": ["tanh", "tanh", "sigmoid"]
+    "activations": ["tanh", "tanh", "identity"]
   }
 }

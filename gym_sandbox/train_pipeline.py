@@ -13,13 +13,14 @@ from pathlib import Path
 from tqdm import tqdm
 
 from .models import SeqLinear
-from .train_algorithms import REINFORCE
+from .train_algorithms import DQL, REINFORCE
 
 MODELS = {
     "seqlinear": SeqLinear,
 }
 
 ALGORITHMS = {
+    "dql": DQL,
     "reinforce": REINFORCE,
 }
 

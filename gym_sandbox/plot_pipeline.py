@@ -34,10 +34,10 @@ class PlotPipeline:
         self.run_names = []
         for run_name in os.listdir(self.model_dir):
             n_run, env, model, alg, reward = run_name.split("__")
-            a = int(n_run) in params["n_runs"] or params["n_runs"] == "all"
-            b = env in params["envs"] or params["envs"] == "all"
-            c = model in params["models"] or params["models"] == "all"
-            d = alg in params["algorithms"] or params["algorithms"] == "all"
+            a = int(n_run) in params["n_runs"] or "all" in params["n_runs"]
+            b = env in params["envs"] or "all" in params["n_runs"]
+            c = model in params["models"] or "all" in params["n_runs"]
+            d = alg in params["algorithms"] or "all" in params["n_runs"]
             if a and b and c and d:
                 self.run_names.append(run_name)
 

@@ -1,12 +1,12 @@
 {
   "env_name": "CartPole-v1",
   "model_name": "seqlinear",
-  "train_algorithm_name": "reinforce",
-  "n_eps": 5000,
-  "seeds": [1, 2],
+  "train_algorithm_name": "dql",
+  "n_eps": 20000,
+  "seeds": [1, 2, 3, 5, 8, 13, 21, 34, 55, 89],
   "deque_size": 1000,
   "verbose": true,
   "record": true,
-  "record_ep_trigger": 1000,
-  "rec_last_n_eps": 10
+  "record_ep_trigger": 2000,
+  "rec_last_n_eps": 20
 }
