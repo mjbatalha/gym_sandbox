@@ -27,7 +27,15 @@ REWARDS = {
 
 class REINFORCE:
 
-    # todo: summary & references
+    # todo: summary
+
+    """
+    Implementation inspired by:
+    https://gymnasium.farama.org/tutorials/training_agents/reinforce_invpend_gym_v26/#sphx-glr-tutorials-training-agents-reinforce-invpend-gym-v26-py
+    Literature:
+    - Policy Gradient Methods for Reinforcement Learning with Function Approximation
+    https://proceedings.neurips.cc/paper/1999/file/464d828b85b0bed98e80ade0a5c43b0f-Paper.pdf
+    """
 
     def __init__(self, env, model, params: dict):
 
@@ -103,7 +111,15 @@ class REINFORCE:
 
 class DQL:
 
-    # todo: summary & references
+    # todo: summary
+
+    """
+    Implementation inspired by:
+    https://github.com/simoninithomas/deep_q_learning/blob/master/DQL%20Cartpole.ipynb
+    Literature:
+    - Human-level control through deep reinforcement learning
+    https://web.stanford.edu/class/psych209/Readings/MnihEtAlHassibis15NatureControlDeepRL.pdf
+    """
 
     def __init__(self, env, model, params: dict):
 
