@@ -2,10 +2,6 @@
 ## Solution for the InstaDeep RL code challenge.
 ## Preferred date for interview: Friday, 24 March 2023.
 
-##
-
----
-
 # gym_sandbox
 
 A repository for training RL models in Gymnasium environments, with a modular architecture for quick
