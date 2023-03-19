@@ -1,6 +1,6 @@
 
-## Solution for the InstaDeep RL code challenge.
-## Preferred date for interview: Friday, 24 March 2023.
+### Solution for the InstaDeep RL code challenge.
+### Preferred date for interview: Friday, 24 March 2023.
 
 # gym_sandbox
 
@@ -28,5 +28,3 @@ Python 3.8.16
 * pip install -r requirements.txt
 * python3 -m gym_sandbox train (to run train_pipeline.py)
 * python3 -m gym_sandbox train (to run plot_pipeline.py)
-
----
