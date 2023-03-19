@@ -10,7 +10,7 @@ from random import sample
 from torch.distributions.bernoulli import Bernoulli
 from torch.optim import AdamW
 
-from .reward_functions import identity_reward
+from .reward_functions import identity_reward, energy_scale, energy_adjust, distance_penalty, distance_adjust
 
 OPTIMIZERS = {
     "adamw": AdamW,
@@ -22,6 +22,10 @@ DISTRIBUTIONS = {
 
 REWARDS = {
     "identity": identity_reward,
+    "energy_scale": energy_scale,
+    "energy_adjust": energy_adjust,
+    "dist_penalty": distance_penalty,
+    "dist_adjust": distance_adjust,
 }
 
 
