@@ -1,11 +1,11 @@
 {
-  "plot_run_name": "reinforce_runs_1_10",
-  "n_runs": [1, 2, 3, 4, 5, 6, 7, 8, 9, 10],
+  "plot_run_name": "reinforce_dql_runs__1_5__11_15",
+  "n_runs": [1, 2, 3, 4, 5, 11, 12, 13, 14, 15],
   "envs": ["CartPole-v1"],
   "models": ["seqlinear"],
-  "algorithms": ["reinforce"],
+  "algorithms": ["reinforce", "dql"],
 
-  "reward_lineplot__1_10":{
+  "reward_lineplot__1_5__11_15":{
     "n_step": 1,
     "x": "episode",
     "y": "reward",
@@ -18,7 +18,7 @@
     "n_runs": ["all"]
   },
 
-  "reward_rm_lineplot__1_10__rw_10":{
+  "reward_rm_lineplot__1_5__11_15__rw_10":{
     "n_step": 1,
     "x": "episode",
     "y": "reward",
@@ -31,7 +31,7 @@
     "n_runs": ["all"]
   },
 
-  "reward_rm_lineplot__1_10__rw_100":{
+  "reward_rm_lineplot__1_5__11_15__rw_100":{
     "n_step": 1,
     "x": "episode",
     "y": "reward",
@@ -44,7 +44,7 @@
     "n_runs": ["all"]
   },
 
-  "reward_rm_lineplot__1_10__rw_1000":{
+  "reward_rm_lineplot__1_5__11_15__rw_1000":{
     "n_step": 1,
     "x": "episode",
     "y": "reward",
@@ -57,7 +57,7 @@
     "n_runs": ["all"]
   },
 
-  "reward_lineplot__1_10__12500_20000":{
+  "reward_lineplot__1_5__11_15__12500_20000":{
     "n_step": 1,
     "x": "episode",
     "y": "reward",
@@ -70,7 +70,7 @@
     "n_runs": ["all"]
   },
 
-  "reward_rm_lineplot__1_10__rw_10__12500_20000":{
+  "reward_rm_lineplot__1_5__11_15__rw_10__12500_20000":{
     "n_step": 1,
     "x": "episode",
     "y": "reward",
@@ -83,7 +83,7 @@
     "n_runs": ["all"]
   },
 
-  "reward_rm_lineplot__1_10__rw_100__12500_20000":{
+  "reward_rm_lineplot__1_5__11_15__rw_100__12500_20000":{
     "n_step": 1,
     "x": "episode",
     "y": "reward",
@@ -96,7 +96,7 @@
     "n_runs": ["all"]
   },
 
-  "reward_rm_lineplot__1_10__rw_1000__12500_20000":{
+  "reward_rm_lineplot__1_5__11_15__rw_1000__12500_20000":{
     "n_step": 1,
     "x": "episode",
     "y": "reward",
