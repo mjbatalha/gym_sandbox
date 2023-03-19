@@ -4,7 +4,7 @@
 
 # gym_sandbox
 
-A repository for training RL models in Gymnasium environments, with a modular architecture for quick
+A repository for training RL models in Gymnasium environments with a modular architecture for quick
 prototyping.
 
 ## Overview
