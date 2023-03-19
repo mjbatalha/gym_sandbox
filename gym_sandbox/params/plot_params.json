@@ -1,12 +1,12 @@
 {
-  "plot_run_name": "test",
-  "n_runs": ["all"],
+  "plot_run_name": "reinforce_runs_1_10",
+  "n_runs": [1, 2, 3, 4, 5, 6, 7, 8, 9, 10],
   "envs": ["CartPole-v1"],
   "models": ["seqlinear"],
-  "algorithms": ["reinforce", "dql"],
+  "algorithms": ["reinforce"],
 
-  "lineplot_001":{
-    "n_step": 10,
+  "reward_lineplot__1_10":{
+    "n_step": 1,
     "x": "episode",
     "y": "reward",
     "hue": "train_algorithm",
@@ -14,11 +14,25 @@
     "rolling_mean": false,
     "rolling_window": 100,
     "ep_min": 0,
-    "ep_max": "max"
+    "ep_max": "max",
+    "n_runs": ["all"]
   },
 
-  "lineplot_002":{
-    "n_step": 10,
+  "reward_rm_lineplot__1_10__rw_10":{
+    "n_step": 1,
+    "x": "episode",
+    "y": "reward",
+    "hue": "train_algorithm",
+    "style": "env",
+    "rolling_mean": true,
+    "rolling_window": 10,
+    "ep_min": 0,
+    "ep_max": "max",
+    "n_runs": ["all"]
+  },
+
+  "reward_rm_lineplot__1_10__rw_100":{
+    "n_step": 1,
     "x": "episode",
     "y": "reward",
     "hue": "train_algorithm",
@@ -26,19 +40,72 @@
     "rolling_mean": true,
     "rolling_window": 100,
     "ep_min": 0,
-    "ep_max": "max"
+    "ep_max": "max",
+    "n_runs": ["all"]
   },
 
-  "lineplot_003":{
-    "n_step": 10,
+  "reward_rm_lineplot__1_10__rw_1000":{
+    "n_step": 1,
+    "x": "episode",
+    "y": "reward",
+    "hue": "train_algorithm",
+    "style": "env",
+    "rolling_mean": true,
+    "rolling_window": 1000,
+    "ep_min": 0,
+    "ep_max": "max",
+    "n_runs": ["all"]
+  },
+
+  "reward_lineplot__1_10__12500_20000":{
+    "n_step": 1,
+    "x": "episode",
+    "y": "reward",
+    "hue": "train_algorithm",
+    "style": "env",
+    "rolling_mean": false,
+    "rolling_window": 100,
+    "ep_min": 12500,
+    "ep_max": 20000,
+    "n_runs": ["all"]
+  },
+
+  "reward_rm_lineplot__1_10__rw_10__12500_20000":{
+    "n_step": 1,
+    "x": "episode",
+    "y": "reward",
+    "hue": "train_algorithm",
+    "style": "env",
+    "rolling_mean": true,
+    "rolling_window": 10,
+    "ep_min": 12500,
+    "ep_max": 20000,
+    "n_runs": ["all"]
+  },
+
+  "reward_rm_lineplot__1_10__rw_100__12500_20000":{
+    "n_step": 1,
     "x": "episode",
     "y": "reward",
     "hue": "train_algorithm",
     "style": "env",
     "rolling_mean": true,
     "rolling_window": 100,
-    "ep_min": 750,
-    "ep_max": 1000
-  }
+    "ep_min": 12500,
+    "ep_max": 20000,
+    "n_runs": ["all"]
+  },
 
+  "reward_rm_lineplot__1_10__rw_1000__12500_20000":{
+    "n_step": 1,
+    "x": "episode",
+    "y": "reward",
+    "hue": "train_algorithm",
+    "style": "env",
+    "rolling_mean": true,
+    "rolling_window": 1000,
+    "ep_min": 12500,
+    "ep_max": 20000,
+    "n_runs": ["all"]
+  }
 }

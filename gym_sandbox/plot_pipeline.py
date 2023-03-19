@@ -29,6 +29,9 @@ class PlotPipeline:
         # paths
         self.plot_dir = os.path.join(os.getcwd(), "gym_sandbox", "plots")
         self.model_dir = os.path.join(os.getcwd(), "gym_sandbox", "models")
+        self.save_dir = os.path.join(self.plot_dir, self.pipeline_params["plot_run_name"])
+        if not os.path.isdir(self.save_dir):
+            os.mkdir(self.save_dir)
 
         # objects
         self.run_names = []
@@ -60,11 +63,18 @@ class PlotPipeline:
                 # unpack plot params
                 n_step, x, y, hue, style = v["n_step"], v["x"], v["y"], v["hue"], v["style"]
                 ep_min, ep_max = v["ep_min"], v["ep_max"]
-                rollmean, rollwindow = v["rolling_mean"], v["rolling_window"]
+                roll_mean, roll_window = v["rolling_mean"], v["rolling_window"]
+                n_runs = v["n_runs"]
 
                 # iterate over training runs
                 df_list = []
                 for run_name in self.run_names:
+
+                    # plot filters
+                    n_run, env, model, alg, reward = run_name.split("__")
+                    a = int(n_run) in n_runs or "all" in n_runs
+                    if not a:
+                        continue
 
                     # load stats dict
                     stats_path = os.path.join(self.model_dir, run_name, "stats.json")
@@ -72,13 +82,17 @@ class PlotPipeline:
                         stats = json.load(f)
 
                     # apply rolling mean
-                    if rollmean:
-                        stats[y + "_rm"] = self.ep_rollmean(stats[y], stats["episode"], rollwindow)
+                    if roll_mean:
+                        stats[y + "_rm"] = self.ep_rollmean(stats[y], stats["episode"], roll_window)
 
                     # apply min & max episodes
                     if isinstance(ep_min, int) and isinstance(ep_max, int):
                         for s, l in stats.items():
                             stats[s] = l[ep_min:ep_max]
+
+                    # sample linearly spaced episodes
+                    for stats_k, stats_v in stats.items():
+                        stats[stats_k] = stats_v[0::n_step]
 
                     # add run element names
                     n_run, env, model, alg, reward = run_name.split("__")
@@ -93,14 +107,17 @@ class PlotPipeline:
                 df = pd.concat(df_list).reset_index(drop=True)
 
                 # save plot
-                save_path = os.path.join(self.plot_dir, self.pipeline_params["plot_run_name"])
-                if not os.path.isdir(save_path):
-                    os.mkdir(save_path)
                 plt.figure(figsize=(40, 20))
-                if not rollmean:
-                    sns.lineplot(x=x, y=y, hue=hue, style=style, data=df)
+                sns.set(font_scale=3)
+                if roll_mean:
+                    sns.lineplot(x=x, y=y + "_rm", hue=hue, style=style, data=df).set(title=k)
                 else:
-                    sns.lineplot(x=x, y=y + "_rm", hue=hue, style=style, data=df)
-                plt.savefig(os.path.join(save_path, k + ".png"), format='png', dpi=150)
+                    sns.lineplot(x=x, y=y, hue=hue, style=style, data=df).set(title=k)
+                plt.savefig(os.path.join(self.save_dir, k + ".png"), format='png', dpi=150)
+
+        # save params
+        params_path = os.path.join(self.save_dir, "plot_run_params.json")
+        with Path(params_path).open('w') as f:
+            json.dump(self.pipeline_params, f, sort_keys=True, indent=4, separators=(',', ':'))
 
         return True
