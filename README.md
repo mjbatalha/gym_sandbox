@@ -25,3 +25,7 @@ Python 3.8.16
 * pip install -r requirements.txt
 * python3 -m gym_sandbox train (to run train_pipeline.py)
 * python3 -m gym_sandbox plot (to run plot_pipeline.py)
+
+## CartPole-v1
+
+![Screenshot](gym_sandbox/plots/reinforce_identity_energy_dist_runs__1_5__16_25/reward_rm_lineplot__1_5__16_25__rw_1000__12500_20000.png)
