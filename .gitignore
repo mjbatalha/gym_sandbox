@@ -6,3 +6,6 @@ venv/
 
 # temporary folder
 tmp/
+
+# slides
+*.pptx
